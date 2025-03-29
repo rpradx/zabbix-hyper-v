@@ -1,0 +1,2645 @@
+{
+  "__inputs": [
+    {
+      "name": "DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE",
+      "label": "alexanderzobnin-zabbix-datasource",
+      "description": "",
+      "type": "datasource",
+      "pluginId": "alexanderzobnin-zabbix-datasource",
+      "pluginName": "Zabbix"
+    }
+  ],
+  "__elements": {},
+  "__requires": [
+    {
+      "type": "datasource",
+      "id": "alexanderzobnin-zabbix-datasource",
+      "name": "Zabbix",
+      "version": "4.5.4"
+    },
+    {
+      "type": "grafana",
+      "id": "grafana",
+      "name": "Grafana",
+      "version": "11.1.3"
+    },
+    {
+      "type": "panel",
+      "id": "grafana-polystat-panel",
+      "name": "Polystat",
+      "version": "2.1.13"
+    },
+    {
+      "type": "panel",
+      "id": "marcusolsson-dynamictext-panel",
+      "name": "Business Text",
+      "version": "5.4.0"
+    },
+    {
+      "type": "panel",
+      "id": "text",
+      "name": "Text",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "timeseries",
+      "name": "Time series",
+      "version": ""
+    },
+    {
+      "type": "panel",
+      "id": "volkovlabs-echarts-panel",
+      "name": "Business Charts",
+      "version": "6.3.0"
+    }
+  ],
+  "annotations": {
+    "list": [
+      {
+        "builtIn": 1,
+        "datasource": {
+          "type": "datasource",
+          "uid": "grafana"
+        },
+        "enable": true,
+        "hide": true,
+        "iconColor": "rgba(0, 211, 255, 1)",
+        "name": "Annotations & Alerts",
+        "target": {
+          "limit": 100,
+          "matchAny": false,
+          "tags": [],
+          "type": "dashboard"
+        },
+        "type": "dashboard"
+      }
+    ]
+  },
+  "description": "",
+  "editable": true,
+  "fiscalYearStartMonth": 0,
+  "gnetId": 15057,
+  "graphTooltip": 0,
+  "id": null,
+  "links": [],
+  "liveNow": false,
+  "panels": [
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 0
+      },
+      "id": 42,
+      "panels": [],
+      "title": "OVERVIEW",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "dtdhms"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 24,
+        "x": 0,
+        "y": 1
+      },
+      "id": 3,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"pt-BR\">\n\n<body>\n  <div class=\"menu-principal\">\n    <div class=\"content logo\">\n      <img src=\"https://img.icons8.com/?size=100&id=gXoJoyTtYXFg&format=png&color=FFFFFF\" alt=\"Logo Esquerda\" class=\"left-image\" />\n    </div>\n    <div class=\"text-container\">\n      <p class=\"monitor-text\">\n        MONITOR <b class=\"genieacs-text\">HYPER-V</b>\n      </p>\n    </div>\n    <div class=\"content time-container\">\n      <p class=\"time-text\">\n        Servidor ligado há {{Value}}\n      </p>\n    </div>\n  </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"pt-BR\">\r\n\r\n<body>\r\n  <div class=\"menu-principal\">\r\n    <div class=\"content logo\">\r\n      <img src=\"https://img.icons8.com/?size=100&id=gXoJoyTtYXFg&format=png&color=FFFFFF\" alt=\"Logo Esquerda\" class=\"left-image\" />\r\n    </div>\r\n    <div class=\"text-container\">\r\n      <p class=\"monitor-text\">\r\n        MONITOR <b class=\"genieacs-text\">HYPER-V</b>\r\n      </p>\r\n    </div>\r\n    <div class=\"content time-container\">\r\n      <p class=\"time-text\">\r\n        Servidor ligado há {{Value}}\r\n      </p>\r\n    </div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "Uptime",
+        "styles": "body {\r\n    width: 100%;\r\n    height: 100%;\r\n    margin: 0;\r\n    padding: 0;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    background-color: #f0f0f0; /* Ajuste a cor de fundo conforme necessário */\r\n    box-sizing: border-box;\r\n}\r\n\r\n.menu-principal {\r\n    cursor: pointer;\r\n    border-radius: 12px;\r\n    width: 100%;\r\n    //background-image: linear-gradient(50deg, rgba(0,0,0,1) 0%, rgba(22,32,44,1) 50%, rgba(30,30,45,1) 100%, rgba(46,42,85,0.975) 100%);\r\n    background-color: #2f3559;\r\n    height: 125px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    box-sizing: border-box;\r\n    padding: 0 40px;\r\n}\r\n\r\n.content {\r\n    position: relative;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n}\r\n\r\n.logo {\r\n    width: 100px;\r\n}\r\n\r\n.logo img {\r\n    width: 100%;\r\n    height: auto;\r\n}\r\n\r\n.text-container {\r\n    flex: 1;\r\n    text-align: center;\r\n    margin-left: 220px; /* Ajuste o valor conforme necessário */\r\n}\r\n\r\n.monitor-text {\r\n    font-size: 240%;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #ffffff;\r\n}\r\n\r\n.genieacs-text {\r\n    font-weight: bold;\r\n    color: #2dd3e9;\r\n    text-shadow: 0 0 5px rgba(45, 211, 233, 0.5), 0 0 10px rgba(45, 211, 233, 0.4), 0 0 15px rgba(45, 211, 233, 0.3), 0 0 20px rgba(45, 211, 233, 0.2), 0 0 25px rgba(45, 211, 233, 0.1);\r\n    animation: blink 1.8s infinite;\r\n}\r\n\r\n.time-container {\r\n    width: 320px;\r\n    //text-align: center;\r\n    background: #2f3559; /* Ajuste a cor de fundo conforme necessário */\r\n    padding: 18px;\r\n    border-radius: 12px;\r\n    color: #ffffff;\r\n}\r\n\r\n.time-text {\r\n    font-size: 18px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Uptime"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 5
+      },
+      "id": 56,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">TOTAL CORES</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">TOTAL CORES</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=s5NUIabJrb4C&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: spin 3s linear infinite; /* Added animation */\r\n}\r\n\r\n/* Added keyframes for spinning animation */\r\n@keyframes spin {\r\n    from {\r\n        transform: rotate(0deg);\r\n    }\r\n    to {\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Number of cores"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 4,
+        "y": 5
+      },
+      "id": 58,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">TOTAL THREADS</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">TOTAL THREADS</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=s5NUIabJrb4C&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: spin 3s linear infinite; /* Added animation */\r\n}\r\n\r\n/* Added keyframes for spinning animation */\r\n@keyframes spin {\r\n    from {\r\n        transform: rotate(0deg);\r\n    }\r\n    to {\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Number of threads"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 8,
+        "y": 5
+      },
+      "id": 59,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">TOTAL PROCESSOS</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">TOTAL PROCESSOS</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=s5NUIabJrb4C&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: spin 3s linear infinite; /* Added animation */\r\n}\r\n\r\n/* Added keyframes for spinning animation */\r\n@keyframes spin {\r\n    from {\r\n        transform: rotate(0deg);\r\n    }\r\n    to {\r\n        transform: rotate(360deg);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Number of processes"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 12,
+        "y": 5
+      },
+      "id": 41,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">TOTAL VMs</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">TOTAL VMs</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #96dee8;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=Ll5spjNBSRx9&format=png&color=000000');\r\n    background-size: cover;\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    color: #000;\r\n    margin: 0;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #000;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Total VMs"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 16,
+        "y": 5
+      },
+      "id": 45,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">VMs ONLINE</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">VMs ONLINE</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #6be6c1;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=Ll5spjNBSRx9&format=png&color=000000');\r\n    background-size: cover;\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    color: #000;\r\n    margin: 0;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #000;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Total VMs Online"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 20,
+        "y": 5
+      },
+      "id": 50,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">VMs OFFLINE</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">VMs OFFLINE</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #b44b4b;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=Ll5spjNBSRx9&format=png&color=000000');\r\n    background-size: cover;\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    color: #000;\r\n    margin: 0;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #000;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Total VMs Offline"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 9
+      },
+      "id": 63,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">TOTAL RW</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">TOTAL RW</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=vaQUFtPEp5nj&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: bounce 2s infinite;\r\n}\r\n\r\n@keyframes bounce {\r\n    0%, 20%, 50%, 80%, 100% {\r\n        transform: translateY(0);\r\n    }\r\n    40% {\r\n        transform: translateY(-20px);\r\n    }\r\n    60% {\r\n        transform: translateY(-10px);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "/$DISK Disk utilization/"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "gridPos": {
+        "h": 12,
+        "w": 8,
+        "x": 4,
+        "y": 9
+      },
+      "id": 12,
+      "options": {
+        "baidu": {
+          "callback": "bmapReady",
+          "key": ""
+        },
+        "editor": {
+          "format": "auto"
+        },
+        "editorMode": "code",
+        "gaode": {
+          "key": "",
+          "plugin": "AMap.Scale,AMap.ToolBar"
+        },
+        "getOption": "let totalspacevalue = [];\nlet totalspacename = [];\n\ncontext.panel.data.series.forEach((s) => {\n  s.fields.forEach((f) => {\n    if (f.type === 'number') {\n      totalspacevalue.push(...f.values.toArray());\n      totalspacename.push(f.name);\n    }\n  });\n});\n\n// Função para formatar bytes\nfunction formatBytes(bytes, decimals = 2) {\n  if (bytes === 0) return '0 Bytes';\n  const k = 1024;\n  const dm = decimals < 0 ? 0 : decimals;\n  const sizes = ['Bytes', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\n  const i = Math.floor(Math.log(bytes) / Math.log(k));\n  return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\n}\n\nconst sortedData = totalspacename.map((name, index) => ({\n  name: name,\n  value: totalspacevalue[index],\n  formattedValue: formatBytes(totalspacevalue[index])\n}));\n\n// Determinar a cor com base no tema\nconst themeColor = context.grafana.theme.name === 'Light' ? '#000' : '#FFF';\n\nreturn {\n  title: {\n    show: true,\n    text: \"Fylesystem Used Space\",\n    left: \"center\",\n    top: \"top\",\n    textStyle: {\n      color: themeColor\n    },\n  },\n  tooltip: {\n    trigger: 'item',\n    formatter: function (params) {\n      const item = sortedData.find(item => item.name === params.name);\n      return `<span style=\"color:${themeColor}\">${params.name}: ${item.formattedValue}</span>`; // Cor do tooltip ajustada com base no tema\n    }\n  },\n  legend: {\n    top: '10%',\n    left: 'center',\n    textStyle: {\n      color: themeColor\n    }\n  },\n  toolbox: {\n    show: true,\n    feature: {\n      mark: { show: true },\n      dataView: { show: false, readOnly: false },\n      restore: { show: true },\n      saveAsImage: { show: true }\n    }\n  },\n  series: [\n    {\n      name: 'Nightingale Chart',\n      type: 'pie',\n      radius: ['30%', '60%'],\n      center: ['50%', '60%'],\n      //roseType: 'area',\n      itemStyle: {\n        borderRadius: 8\n      },\n      label: {\n        formatter: function (params) {\n          const item = sortedData.find(item => item.name === params.name);\n          return `${params.name}: ${item.formattedValue}`;\n        },\n        color: themeColor\n      },\n      data: sortedData.map(item => ({\n        name: item.name,\n        value: item.value,\n        formattedValue: item.formattedValue,\n      })),\n    }\n  ],\n};\n",
+        "google": {
+          "callback": "gmapReady",
+          "key": ""
+        },
+        "map": "none",
+        "renderer": "canvas",
+        "themeEditor": {
+          "config": "{\r\n  \"color\": [\r\n    \"#3fb1e3\",\r\n    \"#6be6c1\",\r\n    \"#626c91\",\r\n    \"#a0a7e6\",\r\n    \"#c4ebad\",\r\n    \"#96dee8\"\r\n  ],\r\n  \"backgroundColor\": \"rgba(252,252,252,0)\",\r\n  \"textStyle\": {},\r\n  \"title\": {\r\n    \"textStyle\": {\r\n      \"color\": \"#666666\"\r\n    },\r\n    \"subtextStyle\": {\r\n      \"color\": \"#999999\"\r\n    }\r\n  },\r\n  \"line\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": \"2\"\r\n    },\r\n    \"lineStyle\": {\r\n      \"width\": \"3\"\r\n    },\r\n    \"symbolSize\": \"8\",\r\n    \"symbol\": \"emptyCircle\",\r\n    \"smooth\": false\r\n  },\r\n  \"radar\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": \"2\"\r\n    },\r\n    \"lineStyle\": {\r\n      \"width\": \"3\"\r\n    },\r\n    \"symbolSize\": \"8\",\r\n    \"symbol\": \"emptyCircle\",\r\n    \"smooth\": false\r\n  },\r\n  \"bar\": {\r\n    \"itemStyle\": {\r\n      \"barBorderWidth\": 0,\r\n      \"barBorderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"pie\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"scatter\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"boxplot\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"parallel\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"sankey\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"funnel\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"gauge\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    }\r\n  },\r\n  \"candlestick\": {\r\n    \"itemStyle\": {\r\n      \"color\": \"#e6a0d2\",\r\n      \"color0\": \"transparent\",\r\n      \"borderColor\": \"#e6a0d2\",\r\n      \"borderColor0\": \"#3fb1e3\",\r\n      \"borderWidth\": \"2\"\r\n    }\r\n  },\r\n  \"graph\": {\r\n    \"itemStyle\": {\r\n      \"borderWidth\": 0,\r\n      \"borderColor\": \"#ccc\"\r\n    },\r\n    \"lineStyle\": {\r\n      \"width\": \"1\",\r\n      \"color\": \"#cccccc\"\r\n    },\r\n    \"symbolSize\": \"8\",\r\n    \"symbol\": \"emptyCircle\",\r\n    \"smooth\": false,\r\n    \"color\": [\r\n      \"#3fb1e3\",\r\n      \"#6be6c1\",\r\n      \"#626c91\",\r\n      \"#a0a7e6\",\r\n      \"#c4ebad\",\r\n      \"#96dee8\"\r\n    ],\r\n    \"label\": {\r\n      \"color\": \"#ffffff\"\r\n    }\r\n  },\r\n  \"map\": {\r\n    \"itemStyle\": {\r\n      \"areaColor\": \"#eeeeee\",\r\n      \"borderColor\": \"#aaaaaa\",\r\n      \"borderWidth\": 0.5\r\n    },\r\n    \"label\": {\r\n      \"color\": \"#ffffff\"\r\n    },\r\n    \"emphasis\": {\r\n      \"itemStyle\": {\r\n        \"areaColor\": \"rgba(63,177,227,0.25)\",\r\n        \"borderColor\": \"#3fb1e3\",\r\n        \"borderWidth\": 1\r\n      },\r\n      \"label\": {\r\n        \"color\": \"#3fb1e3\"\r\n      }\r\n    }\r\n  },\r\n  \"geo\": {\r\n    \"itemStyle\": {\r\n      \"areaColor\": \"#eeeeee\",\r\n      \"borderColor\": \"#aaaaaa\",\r\n      \"borderWidth\": 0.5\r\n    },\r\n    \"label\": {\r\n      \"color\": \"#ffffff\"\r\n    },\r\n    \"emphasis\": {\r\n      \"itemStyle\": {\r\n        \"areaColor\": \"rgba(63,177,227,0.25)\",\r\n        \"borderColor\": \"#3fb1e3\",\r\n        \"borderWidth\": 1\r\n      },\r\n      \"label\": {\r\n        \"color\": \"#3fb1e3\"\r\n      }\r\n    }\r\n  },\r\n  \"categoryAxis\": {\r\n    \"axisLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": \"#cccccc\"\r\n      }\r\n    },\r\n    \"axisTick\": {\r\n      \"show\": false,\r\n      \"lineStyle\": {\r\n        \"color\": \"#333\"\r\n      }\r\n    },\r\n    \"axisLabel\": {\r\n      \"show\": true,\r\n      \"color\": \"#999999\"\r\n    },\r\n    \"splitLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": [\r\n          \"#eeeeee\"\r\n        ]\r\n      }\r\n    },\r\n    \"splitArea\": {\r\n      \"show\": false,\r\n      \"areaStyle\": {\r\n        \"color\": [\r\n          \"rgba(250,250,250,0.05)\",\r\n          \"rgba(200,200,200,0.02)\"\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"valueAxis\": {\r\n    \"axisLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": \"#cccccc\"\r\n      }\r\n    },\r\n    \"axisTick\": {\r\n      \"show\": false,\r\n      \"lineStyle\": {\r\n        \"color\": \"#333\"\r\n      }\r\n    },\r\n    \"axisLabel\": {\r\n      \"show\": true,\r\n      \"color\": \"#999999\"\r\n    },\r\n    \"splitLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": [\r\n          \"#eeeeee\"\r\n        ]\r\n      }\r\n    },\r\n    \"splitArea\": {\r\n      \"show\": false,\r\n      \"areaStyle\": {\r\n        \"color\": [\r\n          \"rgba(250,250,250,0.05)\",\r\n          \"rgba(200,200,200,0.02)\"\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"logAxis\": {\r\n    \"axisLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": \"#cccccc\"\r\n      }\r\n    },\r\n    \"axisTick\": {\r\n      \"show\": false,\r\n      \"lineStyle\": {\r\n        \"color\": \"#333\"\r\n      }\r\n    },\r\n    \"axisLabel\": {\r\n      \"show\": true,\r\n      \"color\": \"#999999\"\r\n    },\r\n    \"splitLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": [\r\n          \"#eeeeee\"\r\n        ]\r\n      }\r\n    },\r\n    \"splitArea\": {\r\n      \"show\": false,\r\n      \"areaStyle\": {\r\n        \"color\": [\r\n          \"rgba(250,250,250,0.05)\",\r\n          \"rgba(200,200,200,0.02)\"\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"timeAxis\": {\r\n    \"axisLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": \"#cccccc\"\r\n      }\r\n    },\r\n    \"axisTick\": {\r\n      \"show\": false,\r\n      \"lineStyle\": {\r\n        \"color\": \"#333\"\r\n      }\r\n    },\r\n    \"axisLabel\": {\r\n      \"show\": true,\r\n      \"color\": \"#999999\"\r\n    },\r\n    \"splitLine\": {\r\n      \"show\": true,\r\n      \"lineStyle\": {\r\n        \"color\": [\r\n          \"#eeeeee\"\r\n        ]\r\n      }\r\n    },\r\n    \"splitArea\": {\r\n      \"show\": false,\r\n      \"areaStyle\": {\r\n        \"color\": [\r\n          \"rgba(250,250,250,0.05)\",\r\n          \"rgba(200,200,200,0.02)\"\r\n        ]\r\n      }\r\n    }\r\n  },\r\n  \"toolbox\": {\r\n    \"iconStyle\": {\r\n      \"borderColor\": \"#999999\"\r\n    },\r\n    \"emphasis\": {\r\n      \"iconStyle\": {\r\n        \"borderColor\": \"#666666\"\r\n      }\r\n    }\r\n  },\r\n  \"legend\": {\r\n    \"textStyle\": {\r\n      \"color\": \"#000\"\r\n    }\r\n  },\r\n  \"tooltip\": {\r\n    \"axisPointer\": {\r\n      \"lineStyle\": {\r\n        \"color\": \"#cccccc\",\r\n        \"width\": 1\r\n      },\r\n      \"crossStyle\": {\r\n        \"color\": \"#cccccc\",\r\n        \"width\": 1\r\n      }\r\n    }\r\n  },\r\n  \"timeline\": {\r\n    \"lineStyle\": {\r\n      \"color\": \"#626c91\",\r\n      \"width\": 1\r\n    },\r\n    \"itemStyle\": {\r\n      \"color\": \"#626c91\",\r\n      \"borderWidth\": 1\r\n    },\r\n    \"controlStyle\": {\r\n      \"color\": \"#626c91\",\r\n      \"borderColor\": \"#626c91\",\r\n      \"borderWidth\": 0.5\r\n    },\r\n    \"checkpointStyle\": {\r\n      \"color\": \"#3fb1e3\",\r\n      \"borderColor\": \"#3fb1e3\"\r\n    },\r\n    \"label\": {\r\n      \"color\": \"#626c91\"\r\n    },\r\n    \"emphasis\": {\r\n      \"itemStyle\": {\r\n        \"color\": \"#626c91\"\r\n      },\r\n      \"controlStyle\": {\r\n        \"color\": \"#626c91\",\r\n        \"borderColor\": \"#626c91\",\r\n        \"borderWidth\": 0.5\r\n      },\r\n      \"label\": {\r\n        \"color\": \"#626c91\"\r\n      }\r\n    }\r\n  },\r\n  \"visualMap\": {\r\n    \"color\": [\r\n      \"#2a99c9\",\r\n      \"#afe8ff\"\r\n    ]\r\n  },\r\n  \"dataZoom\": {\r\n    \"backgroundColor\": \"rgba(255,255,255,0)\",\r\n    \"dataBackgroundColor\": \"rgba(222,222,222,1)\",\r\n    \"fillerColor\": \"rgba(114,230,212,0.25)\",\r\n    \"handleColor\": \"#cccccc\",\r\n    \"handleSize\": \"100%\",\r\n    \"textStyle\": {\r\n      \"color\": \"#999999\"\r\n    }\r\n  },\r\n  \"markPoint\": {\r\n    \"label\": {\r\n      \"color\": \"#ffffff\"\r\n    },\r\n    \"emphasis\": {\r\n      \"label\": {\r\n        \"color\": \"#ffffff\"\r\n      }\r\n    }\r\n  }\r\n}",
+          "name": "custom"
+        },
+        "visualEditor": {
+          "code": "return {\n  dataset: context.editor.dataset,\n  series: context.editor.series,\n  xAxis: {\n    type: 'time',\n  },\n  yAxis: {\n    type: 'value',\n    min: 'dataMin',\n  },\n}\n",
+          "dataset": [],
+          "series": []
+        }
+      },
+      "pluginVersion": "6.3.0",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "/Used space/"
+          },
+          "itemTag": {
+            "filter": "/Application: Filesystem.*/"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "volkovlabs-echarts-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 12,
+        "y": 9
+      },
+      "id": 48,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">USO DE CPU</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">USO DE CPU</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #a0a7e6;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 14px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=cJRfe92jgVbN&format=png&color=FFFFFF');\r\n    background-size: cover;\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    color: #000;\r\n    margin: 0;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #000;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "CPU utilization"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 3,
+        "w": 6,
+        "x": 18,
+        "y": 9
+      },
+      "id": 47,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}}</p>\n            <p class=\"label\">USO DE MEMORIA</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}}</p>\r\n      <p class=\"label\">USO DE MEMORIA</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #3fb1e3;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 14px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=gysQkvkaNAlD&format=png&color=000000');\r\n    background-size: cover;\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    color: #000;\r\n    margin: 0;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #000;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Memory utilization"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#a0a7e6",
+            "mode": "shades"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "axisSoftMax": 100,
+            "axisSoftMin": 0,
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineStyle": {
+              "fill": "solid"
+            },
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 12,
+        "y": 12
+      },
+      "id": 5,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "application": {
+            "filter": "CPU"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "CPU utilization"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "color": {
+            "fixedColor": "#3fb1e3",
+            "mode": "shades"
+          },
+          "custom": {
+            "axisBorderShow": false,
+            "axisCenteredZero": false,
+            "axisColorMode": "text",
+            "axisGridShow": false,
+            "axisLabel": "",
+            "axisPlacement": "auto",
+            "barAlignment": 0,
+            "drawStyle": "line",
+            "fillOpacity": 100,
+            "gradientMode": "hue",
+            "hideFrom": {
+              "legend": false,
+              "tooltip": false,
+              "viz": false
+            },
+            "insertNulls": false,
+            "lineInterpolation": "smooth",
+            "lineWidth": 1,
+            "pointSize": 3,
+            "scaleDistribution": {
+              "type": "linear"
+            },
+            "showPoints": "never",
+            "spanNulls": false,
+            "stacking": {
+              "group": "A",
+              "mode": "none"
+            },
+            "thresholdsStyle": {
+              "mode": "off"
+            }
+          },
+          "mappings": [],
+          "max": 90,
+          "min": 0,
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              }
+            ]
+          },
+          "unit": "percent"
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 9,
+        "w": 6,
+        "x": 18,
+        "y": 12
+      },
+      "id": 6,
+      "options": {
+        "legend": {
+          "calcs": [],
+          "displayMode": "list",
+          "placement": "bottom",
+          "showLegend": false
+        },
+        "tooltip": {
+          "mode": "single",
+          "sort": "none"
+        }
+      },
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "Memory utilization"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "timeseries"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 13
+      },
+      "id": 61,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}} r/s</p>\n            <p class=\"label\">LEITURA</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}} r/s</p>\r\n      <p class=\"label\">LEITURA</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=vaQUFtPEp5nj&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: bounce 2s infinite;\r\n}\r\n\r\n@keyframes bounce {\r\n    0%, 20%, 50%, 80%, 100% {\r\n        transform: translateY(0);\r\n    }\r\n    40% {\r\n        transform: translateY(-20px);\r\n    }\r\n    60% {\r\n        transform: translateY(-10px);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "/$DISK Disk read rate/"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "green",
+                "value": null
+              },
+              {
+                "color": "red",
+                "value": 80
+              }
+            ]
+          }
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 4,
+        "w": 4,
+        "x": 0,
+        "y": 17
+      },
+      "id": 62,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n    <div class=\"widget\">\n        <div class=\"icon\"></div>\n        <div class=\"info\">\n            <p class=\"number\">{{Value}} w/s</p>\n            <p class=\"label\">ESCRITA</p>\n        </div>\n        <div class=\"chart\"></div>\n    </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"widget\">\r\n    <div class=\"icon\"></div>\r\n    <div class=\"info\">\r\n      <p class=\"number\">{{Value}} w/s</p>\r\n      <p class=\"label\">ESCRITA</p>\r\n    </div>\r\n    <div class=\"chart\"></div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "auto",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n    display: flex;\r\n    justify-content: center;\r\n    align-items: center;\r\n    height: 100vh;\r\n    background-color: #f0f4f8;\r\n    margin: 0;\r\n}\r\n\r\n.widget {\r\n    background: #2f3559;\r\n    border-radius: 20px;\r\n    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);\r\n    padding: 32px;\r\n    display: flex;\r\n    align-items: center;\r\n    justify-content: space-between;\r\n    cursor: pointer;\r\n    transition: all 0.3s ease;\r\n}\r\n\r\n.widget .icon {\r\n    width: 50px;\r\n    height: 50px;\r\n    background-image: url('https://img.icons8.com/?size=100&id=vaQUFtPEp5nj&format=png&color=000000');\r\n    background-size: cover;\r\n    animation: bounce 2s infinite;\r\n}\r\n\r\n@keyframes bounce {\r\n    0%, 20%, 50%, 80%, 100% {\r\n        transform: translateY(0);\r\n    }\r\n    40% {\r\n        transform: translateY(-20px);\r\n    }\r\n    60% {\r\n        transform: translateY(-10px);\r\n    }\r\n}\r\n\r\n.widget .info {\r\n    text-align: right;\r\n}\r\n\r\n.widget .info .number {\r\n    font-size: 24px;\r\n    font-weight: bold;\r\n    margin: 0;\r\n    color: #FFF;\r\n}\r\n\r\n.widget .info .label {\r\n    background-color: transparent;\r\n    color: #FFF;\r\n    font-size: 16px;\r\n    font-weight: lighter;\r\n    margin: 0;\r\n}\r\n\r\n.widget .chart {\r\n    position: absolute;\r\n    top: 20px;\r\n    right: 20px;\r\n}\r\n",
+        "wrap": true
+      },
+      "pluginVersion": "5.4.0",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "/$DISK Disk write rate/"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 21
+      },
+      "id": 54,
+      "panels": [],
+      "title": "VMs",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 22
+      },
+      "id": 53,
+      "options": {
+        "code": {
+          "language": "html",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div>\n\t<p style=\"font-size:180%;padding:6px;border-radius:12px;background-color: #2f3559;font-weight:bold;color:#2dd3e9;text-shadow: 0 0 5px rgba(45, 211, 233, 0.5), 0 0 10px rgba(45, 211, 233, 0.4), 0 0 15px rgba(45, 211, 233, 0.3), 0 0 20px rgba(45, 211, 233, 0.2), 0 0 25px rgba(45, 211, 233, 0.1);text-align:center;vertical-align:middle\">\n         VMs\n\t<b style=\"font-weight:bold;color:#000000;text-align:center;vertical-align:middle\">  </b>\n\t</p>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "11.1.3",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "fieldConfig": {
+        "defaults": {
+          "thresholds": {
+            "mode": "absolute",
+            "steps": [
+              {
+                "color": "#001f36",
+                "value": null
+              },
+              {
+                "color": "#c9c7c5",
+                "value": 1
+              },
+              {
+                "color": "#6be6c1",
+                "value": 2
+              },
+              {
+                "color": "#b44b4b",
+                "value": 3
+              },
+              {
+                "color": "#E24D42",
+                "value": 4
+              },
+              {
+                "color": "#1F78C1",
+                "value": 5
+              },
+              {
+                "color": "#c74554",
+                "value": 6
+              }
+            ]
+          }
+        },
+        "overrides": [
+          {
+            "matcher": {
+              "id": "byName",
+              "options": "Uptime"
+            },
+            "properties": [
+              {
+                "id": "unit",
+                "value": "dtdhms"
+              }
+            ]
+          }
+        ]
+      },
+      "gridPos": {
+        "h": 10,
+        "w": 24,
+        "x": 0,
+        "y": 24
+      },
+      "id": 55,
+      "maxPerRow": 6,
+      "options": {
+        "afterRender": "",
+        "content": "<!DOCTYPE html>\n<html lang=\"en\">\n\n<body>\n  <div class=\"card-wrapper\">\n    <div class=\"container\" id=\"vm-container\">\n      <h1 class=\"nome\">{{variableValue '${VMs}'}}</h1>\n      <div class=\"status\">\n        <div style=\"color: {{statusColor}}\">\n          {{vmstatus}}\n        </div>\n      </div>\n      <div class=\"info\">\n        <div class=\"info-item\">\n          <img src=\"https://img.icons8.com/?size=100&id=cJRfe92jgVbN&format=png&color=000000\" class=\"icon\" alt=\"CPU Icon\"/>\n          <div>vCPU</div>\n          <div class=\"info-value\">{{\"CPU cores\"}}</div>\n        </div>\n        <div class=\"info-item\">\n          <img src=\"https://img.icons8.com/?size=100&id=Ll5spjNBSRx9&format=png&color=000000\" class=\"main-icon\" alt=\"Main Icon\"/>\n        </div>\n        <div class=\"info-item\">\n          <img src=\"https://img.icons8.com/?size=100&id=gysQkvkaNAlD&format=png&color=000000\" class=\"icon\" alt=\"RAM Icon\"/>\n          <div>RAM</div>\n          <div class=\"info-value\">{{vmmemory}}</div>\n        </div>\n      </div>\n      <div class=\"details\">\n        <div>Uptime: {{Uptime}}</div>\n        <div>Disk Size: {{vmdisksize}}</div>\n        <div>Disk Usage: {{vmdiskusage}}</div>\n      </div>\n    </div>\n  </div>\n</body>\n\n</html>",
+        "contentPartials": [],
+        "defaultContent": "<!DOCTYPE html>\r\n<html lang=\"en\">\r\n\r\n<body>\r\n  <div class=\"card-wrapper\">\r\n    <div class=\"container\" id=\"vm-container\">\r\n      <h1 class=\"nome\">{{variableValue '${VMs}'}}</h1>\r\n      <div class=\"status\">\r\n        <div style=\"color: {{statusColor}}\">\r\n          {{vmstatus}}\r\n        </div>\r\n      </div>\r\n      <div class=\"info\">\r\n        <div class=\"info-item\">\r\n          <img src=\"https://img.icons8.com/?size=100&id=cJRfe92jgVbN&format=png&color=000000\" class=\"icon\" alt=\"CPU Icon\"/>\r\n          <div>vCPU</div>\r\n          <div class=\"info-value\">{{\"CPU cores\"}}</div>\r\n        </div>\r\n        <div class=\"info-item\">\r\n          <img src=\"https://img.icons8.com/?size=100&id=Ll5spjNBSRx9&format=png&color=000000\" class=\"main-icon\" alt=\"Main Icon\"/>\r\n        </div>\r\n        <div class=\"info-item\">\r\n          <img src=\"https://img.icons8.com/?size=100&id=gysQkvkaNAlD&format=png&color=000000\" class=\"icon\" alt=\"RAM Icon\"/>\r\n          <div>RAM</div>\r\n          <div class=\"info-value\">{{vmmemory}}</div>\r\n        </div>\r\n      </div>\r\n      <div class=\"details\">\r\n        <div>Uptime: {{Uptime}}</div>\r\n        <div>Disk Size: {{vmdisksize}}</div>\r\n        <div>Disk Usage: {{vmdiskusage}}</div>\r\n      </div>\r\n    </div>\r\n  </div>\r\n</body>\r\n\r\n</html>",
+        "editor": {
+          "format": "none",
+          "language": "html"
+        },
+        "editors": [
+          "styles",
+          "helpers",
+          "default"
+        ],
+        "externalStyles": [],
+        "helpers": "let vmstatus = [];\r\nlet vmdisksize = [];\r\nlet vmdiskusage = [];\r\nlet vmmemory = [];\r\n\r\nconst statusMap = {\r\n  1: 'Other',\r\n  2: 'Running',\r\n  3: 'Off',\r\n  4: 'Stopping',\r\n  6: 'Saved',\r\n  9: 'Paused',\r\n  10: 'Starting',\r\n  11: 'Reset'\r\n};\r\n\r\ncontext.panelData.series.map((s) => {\r\n  vmstatus = s.fields.find((f) => f.name === 'State').values;\r\n  vmdisksize = s.fields.find((f) => f.name === 'Disk size').values;\r\n  vmdiskusage = s.fields.find((f) => f.name === 'Disk usage').values;\r\n  vmmemory = s.fields.find((f) => f.name === 'Memory assigned').values;\r\n\r\n  context.handlebars.registerHelper('vmdisksize', () => formatBytes(vmdisksize));\r\n  context.handlebars.registerHelper('vmdiskusage', () => formatBytes(vmdiskusage));\r\n  context.handlebars.registerHelper('vmmemory', () => formatBytes(vmmemory));\r\n  context.handlebars.registerHelper('vmstatus', () => {\r\n    const status = statusMap[vmstatus];\r\n    return status ? status : 'Unknown status';\r\n  });\r\n\r\n  function formatBytes(bytes, decimals = 2) {\r\n    if (bytes === 0) return '0';\r\n    const k = 1024;\r\n    const dm = decimals < 0 ? 0 : decimals;\r\n    const sizes = ['B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB'];\r\n    const i = Math.floor(Math.log(bytes) / Math.log(k));\r\n    return parseFloat((bytes / Math.pow(k, i)).toFixed(dm)) + ' ' + sizes[i];\r\n  }\r\n});",
+        "renderMode": "everyRow",
+        "status": "State",
+        "styles": "body {\r\n  display: flex;\r\n  justify-content: center;\r\n  align-items: center;\r\n  margin: 0;\r\n}\r\n\r\n.card-wrapper {\r\n  display: flex;\r\n  flex-wrap: wrap;\r\n  justify-content: center;\r\n  gap: 20px;\r\n}\r\n\r\n.container {\r\n  cursor: pointer;\r\n  text-align: center;\r\n  color: #FFFFFF;\r\n  //background-image: linear-gradient(140deg, rgba(0, 31, 54,1) 0%, rgba(43, 54, 121, 0.9) 50%, rgba(0, 31, 54,0.9) 100%);\r\n  background: #2f3559;\r\n  padding: 20px;\r\n  border-radius: 20px;\r\n  box-shadow: 2px 2px 6px 2px rgba(0, 31, 54, 0.5);\r\n  width: 280px;\r\n  height: 350px;\r\n  margin: 0 10px;\r\n  display: flex;\r\n  flex-direction: column;\r\n  justify-content: space-between;\r\n  opacity: 0;\r\n  transform: translateY(20px);\r\n  animation: fadeInUp 0.5s ease-in-out forwards;\r\n  transition: all 0.3s ease;\r\n}\r\n\r\n@keyframes fadeInUp {\r\n  to {\r\n    opacity: 1;\r\n    transform: translateY(0);\r\n  }\r\n}\r\n\r\n.nome {\r\n  font-size: 25px;\r\n  font-weight: bold;\r\n  color: #2dd3e9;\r\n  text-shadow: 0 0 5px rgba(45, 211, 233, 0.5), 0 0 10px rgba(45, 211, 233, 0.4), 0 0 15px rgba(45, 211, 233, 0.3), 0 0 20px rgba(45, 211, 233, 0.2), 0 0 25px rgba(45, 211, 233, 0.1);\r\n  margin-bottom: 5px;\r\n  text-transform: uppercase;\r\n}\r\n\r\n.info {\r\n  display: flex;\r\n  justify-content: space-between;\r\n  align-items: center;\r\n}\r\n\r\n.info-item {\r\n  text-align: center;\r\n  margin: 0 5px;\r\n}\r\n\r\n.icon {\r\n  width: 70%;\r\n  margin-bottom: 0px;\r\n}\r\n\r\n.main-icon {\r\n  width: 100%;\r\n  margin-bottom: 40px;\r\n}\r\n\r\n.info-value {\r\n  font-size: 16px;\r\n  color: #FFFFFF;\r\n  margin-bottom: 10px\r\n}\r\n\r\n.details {\r\n  font-size: 16px;\r\n  color: #FFFFFF;\r\n  margin-bottom: 10px;\r\n  //font-weight: bold;\r\n}\r\n\r\n@keyframes blink {\r\n  0% {\r\n    opacity: 1;\r\n  }\r\n  50% {\r\n    opacity: 0.4;\r\n  }\r\n  100% {\r\n    opacity: 1;\r\n  }\r\n}\r\n\r\n.status {\r\n  text-transform: uppercase;\r\n  font-size: 20px;\r\n  margin-bottom: 5px;\r\n  font-weight: bold;\r\n  //text-shadow: 0 0 4px rgba(255,255,255, 0.5), 0 0 10px rgba(255,255,255, 0.4), 0 0 15px rgba(255,255,255, 0.3), 0 0 20px rgba(255,255,255, 0.2), 0 0 25px rgba(255,255,255, 0.1);\r\n  animation: blink 1.8s infinite;\r\n}",
+        "wrap": false
+      },
+      "pluginVersion": "5.4.0",
+      "repeat": "VMs",
+      "repeatDirection": "h",
+      "targets": [
+        {
+          "application": {
+            "filter": "Memory"
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "VMs"
+          },
+          "host": {
+            "filter": "$VMs"
+          },
+          "item": {
+            "filter": "/.*/"
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": true,
+            "disableDataAlignment": false,
+            "minSeverity": 3,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          },
+          "triggers": {
+            "acknowledged": 2
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "last"
+            ]
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "marcusolsson-dynamictext-panel"
+    },
+    {
+      "collapsed": false,
+      "gridPos": {
+        "h": 1,
+        "w": 24,
+        "x": 0,
+        "y": 34
+      },
+      "id": 44,
+      "panels": [],
+      "title": "SERVICES",
+      "type": "row"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "description": "",
+      "gridPos": {
+        "h": 2,
+        "w": 24,
+        "x": 0,
+        "y": 35
+      },
+      "id": 64,
+      "options": {
+        "code": {
+          "language": "html",
+          "showLineNumbers": false,
+          "showMiniMap": false
+        },
+        "content": "<div>\n\t<p style=\"font-size:180%;padding:6px;border-radius:12px;background-color: #2f3559;font-weight:bold;color:#2dd3e9;text-shadow: 0 0 5px rgba(45, 211, 233, 0.5), 0 0 10px rgba(45, 211, 233, 0.4), 0 0 15px rgba(45, 211, 233, 0.3), 0 0 20px rgba(45, 211, 233, 0.2), 0 0 25px rgba(45, 211, 233, 0.1);text-align:center;vertical-align:middle\">\n         SERVICES STATUS\n\t<b style=\"font-weight:bold;color:#000000;text-align:center;vertical-align:middle\">  </b>\n\t</p>\n</div>",
+        "mode": "html"
+      },
+      "pluginVersion": "11.1.3",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": ""
+          },
+          "host": {
+            "filter": ""
+          },
+          "item": {
+            "filter": ""
+          },
+          "itemTag": {
+            "filter": ""
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": false
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "text"
+    },
+    {
+      "datasource": {
+        "type": "alexanderzobnin-zabbix-datasource",
+        "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+      },
+      "description": "",
+      "fieldConfig": {
+        "defaults": {
+          "mappings": [
+            {
+              "options": {
+                "0": {
+                  "color": "#2f3559",
+                  "index": 0,
+                  "text": "Running"
+                },
+                "6": {
+                  "color": "dark-red",
+                  "index": 1,
+                  "text": "Stopped"
+                },
+                "255": {
+                  "color": "#aaaaaa",
+                  "index": 2,
+                  "text": "No such service"
+                }
+              },
+              "type": "value"
+            }
+          ]
+        },
+        "overrides": []
+      },
+      "gridPos": {
+        "h": 15,
+        "w": 24,
+        "x": 0,
+        "y": 37
+      },
+      "id": 37,
+      "options": {
+        "autoSizeColumns": false,
+        "autoSizePolygons": true,
+        "autoSizeRows": true,
+        "compositeConfig": {
+          "animationSpeed": "3000",
+          "composites": [],
+          "enabled": false
+        },
+        "compositeGlobalAliasingEnabled": false,
+        "ellipseCharacters": 12,
+        "ellipseEnabled": true,
+        "globalAutoScaleFonts": false,
+        "globalClickthrough": "",
+        "globalClickthroughCustomTarget": "",
+        "globalClickthroughCustomTargetEnabled": false,
+        "globalClickthroughNewTabEnabled": false,
+        "globalClickthroughSanitizedEnabled": false,
+        "globalDecimals": 1,
+        "globalDisplayMode": "all",
+        "globalDisplayTextTriggeredEmpty": "OK",
+        "globalFillColor": "dark-blue",
+        "globalFontSize": 15,
+        "globalGradientsEnabled": false,
+        "globalOperator": "lastNotNull",
+        "globalPolygonBorderColor": "#ffffff",
+        "globalPolygonBorderSize": 8,
+        "globalPolygonSize": 30,
+        "globalRegexPattern": "",
+        "globalShape": "hexagon_pointed_top",
+        "globalShowTimestampEnabled": false,
+        "globalShowTimestampFontSize": 12,
+        "globalShowTimestampFormat": "YYYY-MM-DD HH:mm:ss",
+        "globalShowTimestampPosition": "below_value",
+        "globalShowTimestampYOffset": 0,
+        "globalShowTooltipColumnHeadersEnabled": false,
+        "globalShowValueEnabled": true,
+        "globalTextFontAutoColorEnabled": false,
+        "globalTextFontColor": "#ffffff",
+        "globalTextFontFamily": "Helvetica",
+        "globalThresholdsConfig": [],
+        "globalTooltipsEnabled": true,
+        "globalTooltipsFontFamily": "Arial",
+        "globalTooltipsShowTimestampEnabled": false,
+        "globalTooltipsShowValueEnabled": false,
+        "globalUnitFormat": "short",
+        "layoutDisplayLimit": 180,
+        "layoutNumColumns": 14,
+        "layoutNumRows": 2,
+        "overrideConfig": {
+          "overrides": []
+        },
+        "sortByDirection": 1,
+        "sortByField": "value",
+        "tooltipDisplayMode": "all",
+        "tooltipDisplayTextTriggeredEmpty": "OK",
+        "tooltipPrimarySortByField": "name",
+        "tooltipPrimarySortDirection": 1,
+        "tooltipSecondarySortByField": "value",
+        "tooltipSecondarySortDirection": 1
+      },
+      "pluginVersion": "2.1.13",
+      "targets": [
+        {
+          "application": {
+            "filter": ""
+          },
+          "countTriggersBy": "",
+          "datasource": {
+            "type": "alexanderzobnin-zabbix-datasource",
+            "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+          },
+          "evaltype": "0",
+          "functions": [],
+          "group": {
+            "filter": "$Grupo"
+          },
+          "hide": false,
+          "host": {
+            "filter": "$Servidor"
+          },
+          "item": {
+            "filter": "/.*/"
+          },
+          "itemTag": {
+            "filter": "Application: Services"
+          },
+          "macro": {
+            "filter": ""
+          },
+          "options": {
+            "count": false,
+            "disableDataAlignment": false,
+            "showDisabledItems": false,
+            "skipEmptyValues": false,
+            "useTrends": "default",
+            "useZabbixValueMapping": true
+          },
+          "proxy": {
+            "filter": ""
+          },
+          "queryType": "0",
+          "refId": "A",
+          "resultFormat": "time_series",
+          "schema": 12,
+          "table": {
+            "skipEmptyValues": false
+          },
+          "tags": {
+            "filter": ""
+          },
+          "textFilter": "",
+          "trigger": {
+            "filter": ""
+          }
+        }
+      ],
+      "transformations": [
+        {
+          "id": "reduce",
+          "options": {
+            "includeTimeField": false,
+            "mode": "reduceFields",
+            "reducers": [
+              "lastNotNull"
+            ]
+          }
+        },
+        {
+          "id": "renameByRegex",
+          "options": {
+            "regex": "/State of Service/",
+            "renamePattern": ""
+          }
+        }
+      ],
+      "transparent": true,
+      "type": "grafana-polystat-panel"
+    }
+  ],
+  "refresh": "15m",
+  "schemaVersion": 39,
+  "tags": [],
+  "templating": {
+    "list": [
+      {
+        "current": {},
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+        },
+        "definition": "Zabbix - group",
+        "hide": 2,
+        "includeAll": false,
+        "multi": false,
+        "name": "Grupo",
+        "options": [],
+        "query": {
+          "application": "",
+          "group": "WIN",
+          "host": "",
+          "item": "",
+          "itemTag": "",
+          "queryType": "group"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+        },
+        "definition": "Zabbix - host",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "Servidor",
+        "options": [],
+        "query": {
+          "application": "",
+          "group": "$Grupo",
+          "host": "/.*/",
+          "item": "",
+          "itemTag": "",
+          "queryType": "host"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+        },
+        "definition": "Zabbix - host",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "VMs",
+        "options": [],
+        "query": {
+          "application": "",
+          "group": "VMs",
+          "host": "/.*/",
+          "item": "",
+          "itemTag": "",
+          "queryType": "host"
+        },
+        "refresh": 1,
+        "regex": "",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      },
+      {
+        "current": {},
+        "datasource": {
+          "type": "alexanderzobnin-zabbix-datasource",
+          "uid": "${DS_ALEXANDERZOBNIN-ZABBIX-DATASOURCE}"
+        },
+        "definition": "Zabbix - item",
+        "hide": 0,
+        "includeAll": false,
+        "multi": false,
+        "name": "DISK",
+        "options": [],
+        "query": {
+          "application": "",
+          "group": "$Grupo",
+          "host": "$Servidor",
+          "item": "/Disk/",
+          "itemTag": "",
+          "queryType": "item"
+        },
+        "refresh": 1,
+        "regex": "/([A-Z]::)/",
+        "skipUrlSync": false,
+        "sort": 0,
+        "type": "query"
+      }
+    ]
+  },
+  "time": {
+    "from": "now-1h",
+    "to": "now"
+  },
+  "timepicker": {},
+  "timezone": "",
+  "title": "Monitor Hyper-V",
+  "uid": "hva6ywN7k",
+  "version": 12,
+  "weekStart": ""
+}
