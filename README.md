@@ -20,9 +20,9 @@ Este projeto integra o Zabbix à plataforma de virtualização Microsoft Hyper-V
 
 ## 2. Features
 
-**Descoberta Automatizada:** Detecta automaticamente os hosts Hyper-V e suas máquinas virtuais, facilitando a inclusão de novos dispositivos no monitoramento.
-**Monitoramento Abrangente:** Acompanha métricas de desempenho tanto dos hosts Hyper-V quanto das suas máquinas virtuais, garantindo insights precisos sobre a saúde dos ambientes.
-**Coleta Eficiente de Dados:** Utiliza um script PowerShell robusto para coletar e retornar informações detalhadas e em tempo real.
+- **Descoberta Automatizada:** Detecta automaticamente os hosts Hyper-V e suas máquinas virtuais, facilitando a inclusão de novos dispositivos no monitoramento.
+- **Monitoramento Abrangente:** Acompanha métricas de desempenho tanto dos hosts Hyper-V quanto das suas máquinas virtuais, garantindo insights precisos sobre a saúde dos ambientes.
+- **Coleta Eficiente de Dados:** Utiliza um script PowerShell robusto para coletar e retornar informações detalhadas e em tempo real.
 
 ---
 
@@ -39,7 +39,7 @@ Este projeto integra o Zabbix à plataforma de virtualização Microsoft Hyper-V
 1. **Copie** o arquivo `zbx-hyperv.ps1` para o diretório:  
    `C:\Program Files\Zabbix Agent\scripts`
 2. **Importe** o arquivo `zbx-hyperv-template.yaml` no seu Zabbix Server.
-3. **Importe** o arquivo `Monitor Hyper-V.json` no Grafana, se desejar um dashboard pré-configurado.
+3. **Importe** o arquivo `Monitor Hyper-V.json` no Grafana.
 
 ---
 
